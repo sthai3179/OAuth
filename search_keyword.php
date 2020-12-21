@@ -32,7 +32,7 @@ $keywordfromform = "%" . $keywordfromform . "%";
 
 $stmt = $mysqli->prepare("SELECT joke_id, joke_question, joke_answer, users_id, username, google_name FROM joke_table JOIN users ON users.id = joke_table.users_id WHERE joke_question LIKE ?");
 
-$stmt -> bind_param("s", $keywordfromform);
+$stmt ->bind_param("s", $keywordfromform);
 
 $stmt ->execute();
 $stmt -> store_result();
